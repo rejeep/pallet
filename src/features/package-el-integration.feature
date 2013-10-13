@@ -19,4 +19,5 @@ Feature: package.el integration
   Scenario: Upgrading packages via package.el
     Given I have initialised Pallet
     When I upgrade packages via package.el
-    Then nothing should be removed from my Cask file
+    Then my packages should be upgraded
+    And nothing should be removed from my Cask file
