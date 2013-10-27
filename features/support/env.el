@@ -1,17 +1,17 @@
 (require 'f)
 
-(defvar src-support-path
+(defvar pallet-support-path
   (f-dirname load-file-name))
 
-(defvar src-features-path
-  (f-parent src-support-path))
+(defvar pallet-features-path
+  (f-parent pallet-support-path))
 
-(defvar src-root-path
-  (f-parent src-features-path))
+(defvar pallet-root-path
+  (f-parent pallet-features-path))
 
-(add-to-list 'load-path src-root-path)
+(add-to-list 'load-path pallet-root-path)
 
-(require 'src)
+(require 'pallet)
 (require 'espuds)
 (require 'ert)
 

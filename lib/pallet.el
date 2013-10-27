@@ -4,7 +4,7 @@
 
 ;; Author: Robert Dallas Gray
 ;; URL: https://github.com/rdallasgray/pallet
-;; Version: 0.3.12
+;; Version: 0.3.16
 ;; Created: 2013-02-24
 ;; Keywords: elpa, package
 
@@ -200,12 +200,14 @@
   :type 'boolean
   :group 'pallet)
 
+;;;###autoload
 (defun pallet-init ()
   "Bootstrap a Cask setup from package.el information."
   (interactive)
   (pallet-repack t)
   (pallet-install))
 
+;;;###autoload
 (defun pallet-repack (&optional use-copy)
   "Recreate the Cask file from package.el information;
 use `pt/package-archives-copy' if USE-COPY is true."
@@ -213,12 +215,14 @@ use `pt/package-archives-copy' if USE-COPY is true."
          (if use-copy pt/package-archives-copy package-archives)))
     (pt/pallet-ship archive-alist (pt/pallet-pick-packages))))
 
+;;;###autoload
 (defun pallet-install ()
   "Install packages from the Cask file."
   (interactive)
   (pt/cask-up
    (lambda () (cask-install))))
 
+;;;###autoload
 (defun pallet-update ()
   "Update installed packages."
   (interactive)
